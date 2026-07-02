@@ -119,7 +119,7 @@ Powered by the **Media Session API** — the same technology used by Spotify and
 
 ```bash
 # Clone the repository
-git clone https://github.com/TechKnoWEB/StreamHub.git
+git clone https://github.com/fernnje/StreamTV.git
 cd StreamTV
 
 # Install dependencies
