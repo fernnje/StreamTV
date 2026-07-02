@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    font-family: "Inter", system-ui, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    touch-action: manipulation;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overscroll-behavior: none;
+  }
+
+  /* Dark mode (default) */
+  html.dark body {
+    background: #0f0f1a;
+    color: #e2e8f0;
+  }
+
+  /* Light mode */
+  html.light body {
+    background: #f1f5f9;
+    color: #1e293b;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  html.dark ::-webkit-scrollbar-track {
+    background: #1a1b2e;
+  }
+  html.dark ::-webkit-scrollbar-thumb {
+    background: #3a3b4d;
+    border-radius: 3px;
+  }
+  html.dark ::-webkit-scrollbar-thumb:hover {
+    background: #6c5ce7;
+  }
+
+  html.light ::-webkit-scrollbar-track {
+    background: #e2e8f0;
+  }
+  html.light ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+  }
+  html.light ::-webkit-scrollbar-thumb:hover {
+    background: #6c5ce7;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-2.5 bg-gradient-to-r from-accent to-accent-dark
+           text-white font-semibold rounded-xl
+           hover:from-accent-light hover:to-accent
+           transition-all duration-300 shadow-lg shadow-accent/25
+           active:scale-95;
+  }
+
+  /* Dark mode card */
+  html.dark .card {
+    @apply bg-dark-300/50 backdrop-blur-sm rounded-2xl border border-dark-400/50 shadow-xl;
+  }
+
+  /* Light mode card */
+  html.light .card {
+    @apply bg-white/80 backdrop-blur-sm rounded-2xl border border-slate-200 shadow-xl;
+  }
+
+  /* Dark mode glass */
+  html.dark .glass {
+    @apply bg-dark-200/40 backdrop-blur-xl border border-white/5;
+  }
+
+  /* Light mode glass */
+  html.light .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-slate-200;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent-light to-sport-green bg-clip-text text-transparent;
+  }
+}
+
+/* Scrollbar hide utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Safe area insets for notched devices */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.safe-area-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+/* Mobile drawer backdrop */
+.drawer-backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Smooth scroll snap for horizontal tab bars */
+.scroll-snap-x {
+  scroll-snap-type: x mandatory;
+}
+.scroll-snap-x > * {
+  scroll-snap-align: start;
+}
