@@ -1,6 +1,14 @@
 import { defineConfig, type Plugin } from "vite"
 import react from "@vitejs/plugin-react"
 
+export default defineConfig({
+  plugins: [react()],
+  build: {
+    // Naikkan batas peringatan menjadi 1000 KB (1MB)
+    chunkSizeWarningLimit: 1000, 
+  }
+})
+
 function rewritePlaylist(body: string, targetUrl: string, proxyEndpoint: string): string {
   const proxy = (url: string) => proxyEndpoint + encodeURIComponent(new URL(url, targetUrl).href)
   return body
