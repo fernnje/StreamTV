@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -27,38 +27,39 @@
 
   /* Dark mode (default) */
   html.dark body {
-    background: #0f0f1a;
-    color: #e2e8f0;
+    background: #07070f;
+    color: #e8e8f0;
   }
 
   /* Light mode */
   html.light body {
-    background: #f1f5f9;
-    color: #1e293b;
+    background: #f0f2f5;
+    color: #1a1a2e;
   }
 
   /* Scrollbar */
   ::-webkit-scrollbar {
-    width: 6px;
+    width: 4px;
+    height: 4px;
   }
 
   html.dark ::-webkit-scrollbar-track {
-    background: #1a1b2e;
+    background: transparent;
   }
   html.dark ::-webkit-scrollbar-thumb {
-    background: #3a3b4d;
-    border-radius: 3px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 2px;
   }
   html.dark ::-webkit-scrollbar-thumb:hover {
-    background: #6c5ce7;
+    background: rgba(108, 92, 231, 0.5);
   }
 
   html.light ::-webkit-scrollbar-track {
-    background: #e2e8f0;
+    background: transparent;
   }
   html.light ::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
-    border-radius: 3px;
+    background: #d1d5db;
+    border-radius: 2px;
   }
   html.light ::-webkit-scrollbar-thumb:hover {
     background: #6c5ce7;
@@ -67,35 +68,53 @@
 
 @layer components {
   .btn-primary {
-    @apply px-6 py-2.5 bg-gradient-to-r from-accent to-accent-dark
+    @apply px-5 py-2.5 bg-accent
            text-white font-semibold rounded-xl
-           hover:from-accent-light hover:to-accent
-           transition-all duration-300 shadow-lg shadow-accent/25
+           hover:bg-accent-light
+           transition-all duration-200 shadow-lg shadow-accent/20
            active:scale-95;
   }
 
   /* Dark mode card */
   html.dark .card {
-    @apply bg-dark-300/50 backdrop-blur-sm rounded-2xl border border-dark-400/50 shadow-xl;
+    @apply bg-[#0e0e1c] rounded-2xl border border-white/[0.06] shadow-2xl;
   }
 
   /* Light mode card */
   html.light .card {
-    @apply bg-white/80 backdrop-blur-sm rounded-2xl border border-slate-200 shadow-xl;
+    @apply bg-white rounded-2xl border border-slate-200/80 shadow-xl;
   }
 
   /* Dark mode glass */
   html.dark .glass {
-    @apply bg-dark-200/40 backdrop-blur-xl border border-white/5;
+    @apply bg-[#0b0b18]/80 backdrop-blur-2xl border border-white/[0.05];
   }
 
   /* Light mode glass */
   html.light .glass {
-    @apply bg-white/70 backdrop-blur-xl border border-slate-200;
+    @apply bg-white/80 backdrop-blur-2xl border border-slate-200;
   }
 
   .gradient-text {
     @apply bg-gradient-to-r from-accent-light to-sport-green bg-clip-text text-transparent;
+  }
+
+  /* Premium card hover */
+  html.dark .card-hover {
+    @apply transition-all duration-200 hover:bg-white/[0.04] hover:border-white/10 hover:shadow-2xl;
+  }
+  html.light .card-hover {
+    @apply transition-all duration-200 hover:bg-slate-50 hover:border-slate-300 hover:shadow-xl;
+  }
+
+  /* Sidebar nav item */
+  .nav-item {
+    @apply relative w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-150;
+  }
+
+  /* Live badge */
+  .live-badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-bold tracking-wide rounded-md;
   }
 }
 
@@ -119,9 +138,9 @@
 
 /* Mobile drawer backdrop */
 .drawer-backdrop {
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 /* Smooth scroll snap for horizontal tab bars */
@@ -130,4 +149,14 @@
 }
 .scroll-snap-x > * {
   scroll-snap-align: start;
+}
+
+/* Subtle noise texture on cards */
+html.dark .noise-card {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* Channel row hover */
+.channel-row {
+  @apply transition-all duration-150;
 }

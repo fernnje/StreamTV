@@ -68,7 +68,7 @@ function AppShell() {
   }
 
   return (
-    <div className="flex h-dvh overflow-hidden bg-surface-500 text-text-primary transition-colors">
+    <div className={`flex h-dvh overflow-hidden transition-colors ${isDark ? "bg-dark-500" : "bg-slate-100"}`}>
       <Sidebar
         activeTab={activeTab}
         onTabChange={setActiveTab}
@@ -81,14 +81,14 @@ function AppShell() {
         <header
           className={`lg:hidden flex items-center gap-3 px-4 py-3 border-b shrink-0 safe-area-top ${
             isDark
-              ? "bg-dark-300/50 backdrop-blur-xl border-white/5"
-              : "bg-white/80 backdrop-blur-xl border-slate-200"
+              ? "bg-dark-300/90 backdrop-blur-xl border-white/[0.05]"
+              : "bg-white/90 backdrop-blur-xl border-slate-200/80"
           }`}
         >
           <motion.button
             onClick={() => setMobileMenuOpen(true)}
             className={`p-2 rounded-xl transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center ${
-              isDark ? "hover:bg-white/10 text-dark-100" : "hover:bg-slate-100 text-slate-500"
+              isDark ? "hover:bg-white/[0.07] text-dark-100/70" : "hover:bg-slate-100 text-slate-500"
             }`}
             aria-label="Open menu"
             whileHover={{ scale: 1.05 }}
@@ -97,17 +97,17 @@ function AppShell() {
             <Menu className="w-5 h-5" />
           </motion.button>
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-sport-green flex items-center justify-center">
-              <Monitor className="w-4 h-4 text-white" />
+            <div className={`w-8 h-8 rounded-xl flex items-center justify-center ${isDark ? "bg-accent/20 border border-accent/20" : "bg-accent/10 border border-accent/20"}`}>
+              <Monitor className="w-4 h-4 text-accent-light" />
             </div>
-            <span className={`text-base font-bold ${isDark ? "text-white" : "text-slate-900"}`}>
-              StreamHub
+            <span className={`text-[15px] font-bold ${isDark ? "text-white" : "text-slate-900"}`}>
+              FernnTV
             </span>
           </div>
         </header>
 
         {/* Main Content with Crossfade */}
-        <main className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8">
+        <main className="flex-1 overflow-y-auto p-4 sm:p-5 lg:p-7">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
