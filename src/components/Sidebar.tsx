@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Tv, Monitor, Trophy, Sun, Moon, Home, TvMinimalPlay, CircleDollarSign, X } from "lucide-react"
 import { useTheme } from "../context/ThemeContext"
 
-type Tab = "home" | "iptv" | "catalog" | "sports" | "donate" | "legal"
+type Tab = "home" | "iptv" | "catalog" | "sports" | "legal"
 
 interface SidebarProps {
   activeTab: Tab
@@ -18,7 +18,7 @@ const navItems: { id: Tab; label: string; icon: React.ComponentType<{ className?
   { id: "iptv", label: "Live Streams", icon: Tv },
   { id: "catalog", label: "IPTV Channels", icon: TvMinimalPlay },
   { id: "sports", label: "Live Sports", icon: Trophy },
-  { id: "donate", label: "Support Us", icon: CircleDollarSign },
+  { id: "sports", label: "Support Us", icon: CircleDollarSign },
 ]
 
 const SPRING_CONFIG = { type: "spring" as const, stiffness: 380, damping: 30 }
