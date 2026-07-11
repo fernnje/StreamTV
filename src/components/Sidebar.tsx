@@ -83,7 +83,7 @@ export default function Sidebar({ activeTab, onTabChange, isOpen, onClose }: Sid
             </div>
             <div>
               <h1 className={`text-lg font-bold ${isDark ? "text-white" : "text-slate-900"}`}>
-                StreamHub
+                FernnTV
               </h1>
               <p className={`text-xs ${isDark ? "text-dark-100" : "text-slate-500"}`}>
                 IPTV Dashboard
