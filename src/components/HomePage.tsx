@@ -106,7 +106,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             </div>
             <div className="min-w-0">
               <h1 className={`text-2xl sm:text-3xl font-extrabold ${strongText}`}>
-                StreamHub
+                FernnTV
               </h1>
               <p className={`mt-1 max-w-2xl text-sm sm:text-base ${mutedText}`}>
                 IPTV, channel discovery, and live sports in one focused dashboard.
