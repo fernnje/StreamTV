@@ -116,18 +116,8 @@ export default function HomePage({ onNavigate }: HomePageProps) {
 
           <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap lg:justify-end">
             <button
-              onClick={() => <a href="https://saweria.co/iFernn"</a>}
-              className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl bg-accent px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-accent/20 transition-colors hover:bg-accent-light"
-            >
-              Donate
-            </button>
-            <button
               onClick={() => onNavigate("iptv")}
-              className={`inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-colors ${
-                isDark
-                  ? "bg-white/10 text-white hover:bg-white/15"
-                  : "bg-slate-100 text-slate-700 hover:bg-slate-200"
-              }`}
+              className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl bg-accent px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-accent/20 transition-colors hover:bg-accent-light"
             >
               <Play className="w-4 h-4" />
               Watch
@@ -294,7 +284,6 @@ export default function HomePage({ onNavigate }: HomePageProps) {
           <ArrowRight className="w-4 h-4 shrink-0 text-accent-light" />
         </button>
       </section>
-      <script type="text/javascript" src="https://storage.sociabuzz.com/storage/js/main/buttononwebsite/index.min.js"></script><script>sbBoW.draw("fernnj","RG9uYXRlIE5vdw","position-bottom-right","#a29bfe","#FFFFFF")</script>
     </div>
   )
 }
