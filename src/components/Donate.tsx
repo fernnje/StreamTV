@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Heart, CreditCard, ArrowRight } from 'lucide-react';
-import { useTheme } from "../context/ThemeContext"
 
 export default function Donate() {
   const [amount, setAmount] = useState<number>(50000);
