@@ -18,6 +18,7 @@ const navItems: { id: Tab; label: string; icon: React.ComponentType<{ className?
   { id: "iptv", label: "Live Streams", icon: Tv },
   { id: "catalog", label: "IPTV Channels", icon: TvMinimalPlay },
   { id: "sports", label: "Live Sports", icon: Trophy },
+  { id: "donate", label: "Support Us", icon: Donate },
 ]
 
 const SPRING_CONFIG = { type: "spring" as const, stiffness: 380, damping: 30 }
