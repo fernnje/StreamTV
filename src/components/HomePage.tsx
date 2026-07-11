@@ -284,7 +284,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
           <ArrowRight className="w-4 h-4 shrink-0 text-accent-light" />
         </button>
       </section>
+      <script type="text/javascript" src="https://storage.sociabuzz.com/storage/js/main/buttononwebsite/index.min.js"></script><script>sbBoW.draw("fernnj","RG9uYXRlIE5vdw","position-bottom-right","#a29bfe","#FFFFFF")</script>
     </div>
   )
-  <script type="text/javascript" src="https://storage.sociabuzz.com/storage/js/main/buttononwebsite/index.min.js"></script><script>sbBoW.draw("fernnj","RG9uYXRlIE5vdw","position-bottom-right","#a29bfe","#FFFFFF")</script>
 }
