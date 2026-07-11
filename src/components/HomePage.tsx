@@ -286,4 +286,5 @@ export default function HomePage({ onNavigate }: HomePageProps) {
       </section>
     </div>
   )
+  <script type="text/javascript" src="https://storage.sociabuzz.com/storage/js/main/buttononwebsite/index.min.js"></script><script>sbBoW.draw("fernnj","RG9uYXRlIE5vdw","position-bottom-right","#a29bfe","#FFFFFF")</script>
 }
