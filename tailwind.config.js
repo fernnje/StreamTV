@@ -7,15 +7,15 @@ export default {
       colors: {
         dark: {
           50: "#f8fafc",
-          100: "#e2e8f0",
-          200: "#1a1b2e",
-          300: "#2a2b3d",
-          400: "#3a3b4d",
-          500: "#0f0f1a",
-          600: "#0a0a14",
-          700: "#06060e",
-          800: "#030308",
-          900: "#000004",
+          100: "#a0a0b8",
+          200: "#13131f",
+          300: "#0e0e1c",
+          400: "#1a1a2e",
+          500: "#07070f",
+          600: "#050509",
+          700: "#030307",
+          800: "#020204",
+          900: "#010102",
         },
         accent: {
           DEFAULT: "#6c5ce7",
@@ -23,9 +23,10 @@ export default {
           dark: "#4834d4",
         },
         sport: {
-          green: "#00b894",
-          red: "#e17055",
-          yellow: "#fdcb6e",
+          green: "#00cba4",
+          red: "#ff6b6b",
+          yellow: "#ffd93d",
+          orange: "#ff9f43",
         },
         surface: {
           DEFAULT: "var(--surface)",
@@ -44,6 +45,31 @@ export default {
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
+        display: ["DM Sans", "Inter", "system-ui", "sans-serif"],
+      },
+      backgroundImage: {
+        "glow-accent": "radial-gradient(ellipse at 50% 0%, rgba(108,92,231,0.15) 0%, transparent 70%)",
+        "glow-green": "radial-gradient(ellipse at 50% 0%, rgba(0,203,164,0.12) 0%, transparent 70%)",
+      },
+      boxShadow: {
+        "glow-accent": "0 0 40px rgba(108,92,231,0.15)",
+        "glow-sm": "0 0 20px rgba(108,92,231,0.1)",
+        "inner-glow": "inset 0 1px 0 rgba(255,255,255,0.06)",
+      },
+      animation: {
+        "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "fade-in": "fadeIn 0.3s ease-out",
+        "slide-up": "slideUp 0.3s ease-out",
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        slideUp: {
+          "0%": { opacity: "0", transform: "translateY(8px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
       },
     },
   },
